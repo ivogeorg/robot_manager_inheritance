@@ -136,6 +136,10 @@ include
 add_executable(base_robot_manager_node 
 	src/base_robot_manager_node.cpp
 	src/base_robot_manager.cpp)
+add_executable(mobile_robot_robot_manager_node 
+	src/mobile_robot_robot_manager_node.cpp
+	src/mobile_robot_robot_manager.cpp
+	src/base_robot_manager.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -149,6 +153,9 @@ add_executable(base_robot_manager_node
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(base_robot_manager_node
+  ${catkin_LIBRARIES}
+)
+target_link_libraries(mobile_robot_robot_manager_node
   ${catkin_LIBRARIES}
 )
 
