@@ -8,5 +8,7 @@ int main(int argc, char **argv) {
   ros::NodeHandle nh;
   RobotManagerBase rmi_node(&nh);
 
+  ros::spin();
+
   return 0;
 }
