@@ -4,7 +4,9 @@
 
 RobotManagerBase::RobotManagerBase(ros::NodeHandle *nh)
     : config_output_server_{nh->advertiseService(
-          "robot_manager_output", &RobotManagerBase::serviceCallback, this)} {}
+          "robot_manager_output", &RobotManagerBase::serviceCallback, this)} {
+  ROS_INFO("/robot_manager_output service: READY");
+}
 
 bool RobotManagerBase::serviceCallback(std_srvs::SetBool::Request &req,
                                        std_srvs::SetBool::Response &res) {

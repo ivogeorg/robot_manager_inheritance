@@ -2,5 +2,7 @@
 #include "robot_manager_inheritance/base_robot_manager.h"
 #include <ros/ros.h>
 
-MobileRobotRobotManager::MobileRobotRobotManager(ros::NodeHandle *nh) : RobotManagerBase(nh) {}
+MobileRobotRobotManager::MobileRobotRobotManager(ros::NodeHandle *nh) : RobotManagerBase(nh) {
+  ROS_INFO("MobileRobotRobotManager created");
+}
 
