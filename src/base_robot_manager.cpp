@@ -18,6 +18,7 @@ bool RobotManagerBase::serviceCallback(std_srvs::SetBool::Request &req,
       msg += "enabled";
     else
       msg += "disabled";
+    displayRobotDetails();
     ROS_WARN("%s", msg.c_str());
 
     res.success = false;
@@ -32,6 +33,7 @@ bool RobotManagerBase::serviceCallback(std_srvs::SetBool::Request &req,
       msg += "enabled";
     else
       msg += "disabled";
+    displayRobotDetails();
     ROS_INFO("%s", msg.c_str());
 
     res.success = true;
@@ -39,4 +41,9 @@ bool RobotManagerBase::serviceCallback(std_srvs::SetBool::Request &req,
 
     return true;
   }
+}
+
+void RobotManagerBase::displayRobotDetails() {
+    ROS_INFO("Robot name: %s", robot_name_.c_str());
+    ROS_INFO("Robot location: %s", robot_location_.c_str());
 }
