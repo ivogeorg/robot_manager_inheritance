@@ -15,6 +15,8 @@ public:
 
   bool serviceCallback(std_srvs::SetBool::Request &req,
                        std_srvs::SetBool::Response &res);
+
+  bool consoleEnabled() const { return output_enabled_; }
 };
 
 #endif
