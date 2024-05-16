@@ -133,9 +133,6 @@ include
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-add_executable(base_robot_manager_node 
-	src/base_robot_manager_node.cpp
-	src/base_robot_manager.cpp)
 add_executable(mobile_robot_robot_manager_node 
 	src/mobile_robot_robot_manager_node.cpp
 	src/mobile_robot_robot_manager.cpp
@@ -152,9 +149,6 @@ add_executable(mobile_robot_robot_manager_node
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(base_robot_manager_node
-  ${catkin_LIBRARIES}
-)
 target_link_libraries(mobile_robot_robot_manager_node
   ${catkin_LIBRARIES}
 )

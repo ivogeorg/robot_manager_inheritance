@@ -18,7 +18,7 @@ public:
   RobotManagerBase(ros::NodeHandle *);
   ~RobotManagerBase() = default;
 
-  virtual void displayRobotDetails();
+  virtual void displayRobotDetails() = 0;
 
   bool serviceCallback(std_srvs::SetBool::Request &req,
                        std_srvs::SetBool::Response &res);

@@ -42,8 +42,3 @@ bool RobotManagerBase::serviceCallback(std_srvs::SetBool::Request &req,
     return true;
   }
 }
-
-void RobotManagerBase::displayRobotDetails() {
-    ROS_INFO("Robot name: %s", robot_name_.c_str());
-    ROS_INFO("Robot location: %s", robot_location_.c_str());
-}
