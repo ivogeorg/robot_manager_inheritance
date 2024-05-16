@@ -22,7 +22,7 @@ MobileRobotRobotManager::MobileRobotRobotManager(ros::NodeHandle *nh,
 
 void MobileRobotRobotManager::odomemtryCallback(
     const nav_msgs::Odometry::ConstPtr &msg) {
-  if (consoleEnabled()) {
+  if (output_enabled_) {
     ROS_INFO("Position (x, y): %f, %f", msg->pose.pose.position.x,
              msg->pose.pose.position.y);
   }

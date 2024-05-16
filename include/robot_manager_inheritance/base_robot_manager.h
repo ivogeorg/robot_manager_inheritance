@@ -5,8 +5,10 @@
 #include <std_srvs/SetBool.h>
 
 class RobotManagerBase {
-  bool output_enabled_ = false;
   ros::ServiceServer config_output_server_;
+
+protected:
+  bool output_enabled_ = false;
 
 public:
   RobotManagerBase() = default;
@@ -15,8 +17,6 @@ public:
 
   bool serviceCallback(std_srvs::SetBool::Request &req,
                        std_srvs::SetBool::Response &res);
-
-  bool consoleEnabled() const { return output_enabled_; }
 };
 
 #endif
