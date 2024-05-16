@@ -8,7 +8,9 @@ MobileRobotRobotManager::MobileRobotRobotManager(ros::NodeHandle *nh)
                                 odometry_topic_.c_str(), 10,
                                 &MobileRobotRobotManager::odomemtryCallback,
                                 this)} {
-  ROS_INFO("MobileRobotRobotManager created");
+  ROS_INFO("Odometry subscriber created");
+  robot_name_ = "Mobile robot";
+  robot_location_ = "Next door";
 }
 
 MobileRobotRobotManager::MobileRobotRobotManager(ros::NodeHandle *nh,
@@ -17,7 +19,9 @@ MobileRobotRobotManager::MobileRobotRobotManager(ros::NodeHandle *nh,
       odom_sub_{nh->subscribe(odometry_topic_.c_str(), 10,
                               &MobileRobotRobotManager::odomemtryCallback,
                               this)} {
-  ROS_INFO("MobileRobotRobotManager created");
+  ROS_INFO("Odometry subscriber created");
+  robot_name_ = "Mobile robot";
+  robot_location_ = "Next door";
 }
 
 void MobileRobotRobotManager::odomemtryCallback(
@@ -26,4 +30,11 @@ void MobileRobotRobotManager::odomemtryCallback(
     ROS_INFO("Position (x, y): %f, %f", msg->pose.pose.position.x,
              msg->pose.pose.position.y);
   }
+}
+
+void MobileRobotRobotManager::displayRobotDetails() {
+    ROS_INFO("Robot name: %s", robot_name_.c_str());
+    ROS_INFO("Robot location: %s", robot_location_.c_str());
+    ROS_INFO("Battery charge level: %f", battery_charge_level_);
+    ROS_INFO("Type of battery: %s", type_of_battery_.c_str());
 }
